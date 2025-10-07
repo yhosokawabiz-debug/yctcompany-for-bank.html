@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>株式会社ワイシーティー 会社・事業説明</title>
+    <title>株式会社ワイシーティー 会社・事業説明（機密資料）</title>
     <style>
         * {
             margin: 0;
@@ -77,6 +77,20 @@
             position: relative;
             z-index: 1;
             backdrop-filter: blur(10px);
+        }
+
+        .confidential-mark {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #dc3545;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 0.9em;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
         }
 
         h2 {
@@ -298,6 +312,13 @@
             background: linear-gradient(135deg, #d4ddff 0%, #bac8fe 100%);
         }
 
+        .partner-note {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 5px;
+            font-weight: 400;
+        }
+
         .note {
             margin-top: 20px;
             padding: 15px;
@@ -383,6 +404,11 @@
             .slide:last-child {
                 page-break-after: auto;
             }
+
+            .confidential-mark,
+            .print-button {
+                display: none;
+            }
         }
         
         .print-button {
@@ -407,24 +433,19 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
         }
-        
-        @media print {
-            .print-button {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- タイトルスライド -->
-        <div class="slide title-slide">
-            <div class="company-name">株式会社ワイシーティー</div>
-            <div class="company-name-change">※2025年10月に「株式会社NEWGATE」に社名変更予定</div>
-        </div>
+    <div class="confidential-mark">CONFIDENTIAL</div>
 
+    <div class="container">
         <!-- 会社概要 -->
         <div class="slide">
+            <div style="text-align: center; margin-bottom: 40px; padding: 40px; border-radius: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h1 style="font-size: 2.5em; font-weight: 700; color: white; margin-bottom: 15px;">株式会社ワイシーティー</h1>
+                <p style="color: white; font-size: 1.1em; font-weight: 600; background: rgba(255,255,255,0.25); padding: 10px 25px; border-radius: 50px; display: inline-block; backdrop-filter: blur(10px);">※2025年10月に「株式会社NEWGATE」に社名変更予定</p>
+            </div>
+
             <h2>会社概要</h2>
             <div class="info-grid">
                 <div class="info-card">
@@ -473,31 +494,31 @@
             <h2>ラストマイルデリバリー事業</h2>
             <div class="business-section">
                 <div class="business-title">各大手運送会社の配送</div>
-                <div class="business-item">大手宅配会社との協業により、ラストワンマイル領域をエリアにより受託中</div>
+                <div class="business-item">佐川急便・ヤマト運輸・日本郵便・西濃運輸など</div>
             </div>
             <div class="business-section">
                 <div class="business-title">ECサイトの配送</div>
-                <div class="business-item">ラストワンマイル領域をエリアにより受託中</div>
+                <div class="business-item">Amazon・アスクル・アリババ・Q10など</div>
             </div>
             <div class="business-section">
                 <div class="business-title">ネットスーパーの配送</div>
-                <div class="business-item">オンライン食品小売向け配送サービス</div>
+                <div class="business-item">楽天西友ネットスーパーなど</div>
             </div>
             <div class="business-section">
                 <div class="business-title">宅配弁当の配送</div>
-                <div class="business-item">企業向け宅配弁当サービスの配送</div>
+                <div class="business-item">ごちくる・お弁当デリ・くるメシなど</div>
             </div>
             <div class="business-section">
                 <div class="business-title">医薬品配送</div>
-                <div class="business-item">薬局や医療機関への医薬品配送</div>
+                <div class="business-item">薬局や医療機関への配送など</div>
             </div>
             <div class="business-section">
                 <div class="business-title">イベント什器配送</div>
-                <div class="business-item">イベント什器を保管→会場へ配送→会場から引取→保管</div>
+                <div class="business-item">イベント什器を保管→会場へ配送→会場から引取→保管など</div>
             </div>
             <div class="business-section">
                 <div class="business-title">イーバイクデリバリー</div>
-                <div class="business-item">電動アシスト自転車の店舗から個人宅への配送</div>
+                <div class="business-item">イーバイクの店舗→toC配送（カインズ）</div>
             </div>
         </div>
 
@@ -506,19 +527,19 @@
             <h2>3PL事業</h2>
             <div class="business-section">
                 <div class="business-title">化粧品卸会社</div>
-                <div class="business-item">入荷→保管・在庫管理→全国出荷</div>
+                <div class="business-item">入荷→保管・在庫管理→全国出荷（佐川急便＆ヤマト運輸2社）</div>
             </div>
             <div class="business-section">
                 <div class="business-title">寝具メーカー</div>
-                <div class="business-item">海外品国内港入荷→保管・在庫管理→全国出荷→返品回収</div>
+                <div class="business-item">海外品国内港入荷→保管・在庫管理→全国出荷→返品回収（佐川急便ドライ便＆ハコベル・西濃運輸など）</div>
             </div>
             <div class="business-section">
                 <div class="business-title">ブータン松茸輸入会社</div>
-                <div class="business-item">国内空港入荷→通関→保冷輸送→仕分け→飲食店当日配送＆全国出荷</div>
+                <div class="business-item">国内空港入荷→通関→保冷輸送→仕分け→飲食店当日配送＆全国出荷（ヤマトクール便）</div>
             </div>
             <div class="business-section">
                 <div class="business-title">塗料メーカー（板金塗装工場）</div>
-                <div class="business-item">入荷→保管・在庫管理→各拠点へルート配送＆全国出荷</div>
+                <div class="business-item">入荷→保管・在庫管理→各拠点へルート配送＆全国出荷（佐川急便ドライ便）</div>
             </div>
             <div class="business-section">
                 <div class="business-title">生鮮卸会社</div>
@@ -564,10 +585,12 @@
             <div class="business-section">
                 <div class="business-title">シェアカーメンテナンス</div>
                 <div class="business-item">洗車・各簡易点検・忘れ物回収→警察署へ届出・車両移動など</div>
+                <div class="partner-note">パートナー：三井のカーシェア</div>
             </div>
             <div class="business-section">
                 <div class="business-title">シェアモビリティオペレーション</div>
                 <div class="business-item">バッテリー交換・車両移動・再設置など</div>
+                <div class="partner-note">パートナー：LUUP</div>
             </div>
         </div>
 
@@ -577,44 +600,27 @@
             <div class="business-section">
                 <div class="business-title">在宅クリーニング</div>
                 <div class="business-item">エアコンからバストイレキッチンまで総合ハウスクリーニング</div>
+                <div class="partner-note">パートナー：東京ガス・三菱電機・白洋社など</div>
             </div>
             <div class="business-section">
                 <div class="business-title">空室クリーニング</div>
                 <div class="business-item">退去後の空室清掃</div>
+                <div class="partner-note">パートナー：各不動産賃貸管理会社</div>
             </div>
             <div class="business-section">
                 <div class="business-title">飲食店クリーニング</div>
                 <div class="business-item">飲食店の定期清掃</div>
+                <div class="partner-note">パートナー：各飲食店運営会社・飲食コンサル会社など</div>
             </div>
         </div>
 
-        <!-- グループ会社 -->
-        <div class="slide">
-            <h2>グループ会社</h2>
-            <div class="group-company">
-                <h3>株式会社ネオ</h3>
-                <div class="group-company-desc">冷凍冷蔵専門のトラック輸送会社</div>
-            </div>
-
-            <h2 style="margin-top: 50px;">関連会社</h2>
-            <div class="group-company" style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-color: #3b82f6;">
-                <h3 style="border-left-color: #3b82f6;">株式会社ディーフォーエル</h3>
-                <div class="group-company-desc">
-                    以下の3事業にて協力体制<br>
-                    ・ラストマイルデリバリー事業<br>
-                    ・シェアモビリティオペレーション事業<br>
-                    ・クリーニング事業
-                </div>
-            </div>
-        </div>
-
-        <!-- 今後の取り組み -->
+        <!-- 強み -->
         <div class="slide">
             <h2>強み</h2>
             <div class="business-section">
                 <div class="business-title">物流業界の常識にとらわれない視点</div>
                 <div class="business-item">代表者含め、ほぼ全員が物流会社出身ではない物流会社</div>
-                <div class="business-item">ボードメンバーには大手運送会社の企画経験者や、同業社の上場に関わった経験者を擁する</div>
+                <div class="business-item">ボードメンバーやエグゼクティブチームには大手運送会社の企画経験者や、同業社の上場に関わった経験者を擁する</div>
                 <div class="business-item">物流業務の常識にとらわれず、新たな視点から既存サービスのブラッシュアップにチャレンジ</div>
             </div>
             <div class="business-section">
