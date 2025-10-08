@@ -24,59 +24,29 @@
             padding: 30px 20px;
         }
 
-        .slide {
+        .page {
             background: white;
             border-radius: 8px;
             padding: 50px;
             margin-bottom: 30px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            page-break-after: always;
+            page-break-inside: avoid;
         }
 
-        .title-slide {
+        .company-header {
             text-align: center;
-            padding: 80px 50px;
+            margin-bottom: 40px;
+            padding: 40px;
+            border-radius: 12px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .title-slide::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         .company-name {
-            font-size: 2.8em;
-            font-weight: 600;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .company-name-change {
-            font-size: 1.1em;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: rgba(255,255,255,0.25);
-            border-radius: 50px;
-            display: inline-block;
-            font-weight: 400;
-            position: relative;
-            z-index: 1;
-            backdrop-filter: blur(10px);
+            font-size: 2.5em;
+            font-weight: 700;
+            color: white;
+            margin: 0;
         }
 
         .confidential-mark {
@@ -98,7 +68,6 @@
             font-size: 2em;
             margin-bottom: 35px;
             padding-bottom: 12px;
-            border-bottom: none;
             font-weight: 600;
             position: relative;
             padding-left: 20px;
@@ -147,25 +116,6 @@
             padding: 20px;
             border-radius: 12px;
             border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .info-card:hover::before {
-            opacity: 1;
         }
 
         .info-label {
@@ -183,17 +133,12 @@
         }
 
         .business-section {
-            margin: 30px 0;
+            margin: 20px 0;
             padding: 25px;
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             border-radius: 12px;
             border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-        }
-
-        .business-section:hover {
-            border-left-width: 6px;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+            page-break-inside: avoid;
         }
 
         .business-title {
@@ -232,25 +177,6 @@
             padding: 18px;
             border-radius: 12px;
             border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .location-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .location-item:hover::before {
-            opacity: 1;
         }
 
         .location-name {
@@ -263,25 +189,6 @@
         .location-address {
             color: #6c757d;
             font-size: 0.95em;
-        }
-
-        .group-company {
-            background: linear-gradient(135deg, #e8f4f8 0%, #d4e9f2 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 25px;
-            border: 2px solid #bee5eb;
-        }
-
-        .group-company h3 {
-            color: #2c3e50;
-            border-left-color: #17a2b8;
-        }
-
-        .group-company-desc {
-            font-size: 1.1em;
-            margin-top: 15px;
-            color: #495057;
         }
 
         .business-list {
@@ -299,17 +206,7 @@
             text-align: center;
             font-weight: 600;
             font-size: 1.05em;
-            transition: all 0.3s ease;
             border: 2px solid #667eea;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
-        }
-
-        .business-card-simple:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-            border-color: #764ba2;
-            background: linear-gradient(135deg, #d4ddff 0%, #bac8fe 100%);
         }
 
         .partner-note {
@@ -328,89 +225,6 @@
             color: #856404;
         }
 
-        @media (max-width: 768px) {
-            .slide {
-                padding: 30px 20px;
-            }
-
-            .company-name {
-                font-size: 1.8em;
-            }
-
-            h2 {
-                font-size: 1.6em;
-            }
-
-            .info-grid, .location-grid, .business-list {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-            
-            .container {
-                max-width: 100%;
-                padding: 0;
-            }
-            
-            .slide {
-                box-shadow: none;
-                page-break-inside: avoid;
-                page-break-after: always;
-                margin: 0;
-                padding: 40px;
-                border-radius: 0;
-                border: none;
-            }
-            
-            .slide::before {
-                display: none;
-            }
-            
-            .title-slide {
-                page-break-after: always;
-                border-radius: 0;
-            }
-            
-            h2 {
-                color: #2c3e50;
-                page-break-after: avoid;
-            }
-            
-            h3 {
-                color: #34495e;
-                page-break-after: avoid;
-            }
-            
-            .business-section,
-            .info-card,
-            .location-item {
-                page-break-inside: avoid;
-            }
-            
-            .business-section {
-                margin-bottom: 15px;
-            }
-            
-            @page {
-                margin: 20mm;
-                size: A4;
-            }
-            
-            .slide:last-child {
-                page-break-after: auto;
-            }
-
-            .confidential-mark,
-            .print-button {
-                display: none;
-            }
-        }
-        
         .print-button {
             position: fixed;
             bottom: 30px;
@@ -433,16 +247,83 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
         }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                padding: 40px;
+                border-radius: 0;
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                page-break-after: auto;
+            }
+
+            .company-header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .confidential-mark,
+            .print-button {
+                display: none;
+            }
+
+            h2, h3 {
+                page-break-after: avoid;
+            }
+
+            .business-section,
+            .info-card,
+            .location-item {
+                page-break-inside: avoid;
+            }
+
+            @page {
+                margin: 20mm;
+                size: A4;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page {
+                padding: 30px 20px;
+            }
+
+            .company-name {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.6em;
+            }
+
+            .info-grid, .location-grid, .business-list {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="confidential-mark">CONFIDENTIAL</div>
 
     <div class="container">
-        <!-- 会社概要 -->
-        <div class="slide">
-            <div style="text-align: center; margin-bottom: 40px; padding: 40px; border-radius: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                <h1 style="font-size: 2.5em; font-weight: 700; color: white; margin-bottom: 0;">株式会社ワイシーティー</h1>
+        <!-- 1ページ目: 会社概要 -->
+        <div class="page">
+            <div class="company-header">
+                <h1 class="company-name">株式会社ワイシーティー</h1>
             </div>
 
             <h2>会社概要</h2>
@@ -477,8 +358,8 @@
             </div>
         </div>
 
-        <!-- 事業内容サマリー -->
-        <div class="slide">
+        <!-- 2ページ目: 事業内容サマリー -->
+        <div class="page">
             <h2>事業内容</h2>
             <div class="business-list">
                 <div class="business-card-simple">ラストマイルデリバリー事業</div>
@@ -488,8 +369,8 @@
             </div>
         </div>
 
-        <!-- デリバリー事業 -->
-        <div class="slide">
+        <!-- 3ページ目: ラストマイルデリバリー事業 -->
+        <div class="page">
             <h2>ラストマイルデリバリー事業</h2>
             <div class="business-section">
                 <div class="business-title">各大手運送会社の配送</div>
@@ -521,8 +402,8 @@
             </div>
         </div>
 
-        <!-- 3PL事業 -->
-        <div class="slide">
+        <!-- 4ページ目: 3PL事業 -->
+        <div class="page">
             <h2>3PL事業</h2>
             <div class="business-section">
                 <div class="business-title">化粧品卸会社</div>
@@ -550,8 +431,8 @@
             </div>
         </div>
 
-        <!-- 物流拠点 -->
-        <div class="slide">
+        <!-- 5ページ目: 物流拠点 -->
+        <div class="page">
             <h2>物流拠点</h2>
             <div class="location-grid">
                 <div class="location-item">
@@ -578,8 +459,8 @@
             <div class="note">※その他協力会社倉庫拠点あり</div>
         </div>
 
-        <!-- シェアモビリティオペレーション事業 -->
-        <div class="slide">
+        <!-- 6ページ目: シェアモビリティオペレーション事業 -->
+        <div class="page">
             <h2>シェアモビリティオペレーション事業</h2>
             <div class="business-section">
                 <div class="business-title">シェアカーメンテナンス</div>
@@ -593,8 +474,8 @@
             </div>
         </div>
 
-        <!-- クリーニング事業 -->
-        <div class="slide">
+        <!-- 7ページ目: クリーニング事業 -->
+        <div class="page">
             <h2>クリーニング事業</h2>
             <div class="business-section">
                 <div class="business-title">在宅クリーニング</div>
@@ -613,8 +494,8 @@
             </div>
         </div>
 
-        <!-- 強み -->
-        <div class="slide">
+        <!-- 8ページ目: 強み -->
+        <div class="page">
             <h2>強み</h2>
             <div class="business-section">
                 <div class="business-title">物流業界の常識にとらわれない視点</div>
@@ -629,8 +510,8 @@
             </div>
         </div>
 
-        <!-- 今後の取り組み -->
-        <div class="slide">
+        <!-- 9ページ目: 今後の取り組み -->
+        <div class="page">
             <h2>今後の取り組み</h2>
             <div class="business-section">
                 <div class="business-title">① コールセンター専門会社とアライアンス締結済</div>
@@ -656,7 +537,6 @@
         </div>
     </div>
     
-    <!-- PDF出力ボタン -->
     <button class="print-button" onclick="window.print()">📄 PDF出力</button>
     
     <script>
